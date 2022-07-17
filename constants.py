@@ -1,6 +1,7 @@
 TOKEN = '5405403118:AAFf8Uix1_DWmsL6w-TOGtfXISSa4ECJtNM'
 URL = ' https://api.telegram.org/bot{token}/{method}'
 MY_ID = 2073215288
+NEW_ID = 0
 
 UPDATE_METHOD = 'getUpdates'
 # UPDATE_METHOD = 'setWebhook'

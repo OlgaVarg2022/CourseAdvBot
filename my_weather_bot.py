@@ -8,7 +8,7 @@ import constants
 
 def answer_user_bot(data):
     data = {
-        'chat_id': constants.MY_ID,
+        'chat_id': constants.NEW_ID,
         'text': data
     }
     url = constants.URL.format(token=constants.TOKEN, method=constants.SEND_METHOD)
@@ -52,10 +52,12 @@ def main():
         data = json.loads(cont)
         result = data['result'][::-1]
         essens_part = None
+        new_id = 0
         for elem in result:
-            if elem['message']['chat']['id'] == constants.MY_ID:
-                essens_part = elem
-                break
+            # if elem['message']['chat']['id'] == constants.MY_ID:
+            essens_part = elem
+            constants.NEW_ID = elem['message']['chat']['id']
+            break
                     
         if constants.UPDATE_ID != essens_part['update_id']:            
             message = get_message(essens_part)
